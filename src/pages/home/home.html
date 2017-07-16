@@ -1,11 +1,57 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title *ngIf="showAuth">Profile</ion-title>
+    <ion-buttons>
+      <button *ngIf="!showAuth" (click) = 'logout()' ion-button full>Log Out</button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Donnybrook!</h2>
+<ion-content padding class="transparent-header">
+  <div *ngIf="!showAuth">
+    <div id="profile-bg" [ngStyle]="{'background-image': 'url(' + user_0.coverImage +')'}"></div>
+    <div id="content">
+      <div id="profile-info" padding>
+        <img id="profile-image" [src]="user_0.profileImage">
+        <h3 id="profile-name">{{user_0.name}}</h3>
+        <p>{{user_0.occupation}} &bull; {{user_0.location}}</p>
+        <p class="profile-description">{{user_0.description}}</p>
+        <button ion-button *ngIf="!following" small color="purple" (click)="follow()">Update Photo</button>
+
+      </div>
+      <hr/>
+    </div>
+
+    <ion-list no-border>
+      <ion-list-header>
+        General
+      </ion-list-header>
+
+      <ion-item>
+        <ion-icon name='settings' item-start></ion-icon>
+        <ion-label>Politics</ion-label>
+        <ion-select [(ngModel)]="language">
+          <ion-option *ngFor="let language of languages" [value]="language">{{language}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name='settings' item-start></ion-icon>
+        <ion-label>Religion</ion-label>
+        <ion-select [(ngModel)]="religion">
+          <ion-option *ngFor="let religion of religions" [value]="religion">{{religion}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name='musical-notes' item-start style="color: #d03e84"></ion-icon>
+        <ion-label>Music</ion-label>
+        <ion-select [(ngModel)]="genre">
+          <ion-option *ngFor="let genre of genres" [value]="genre">{{genre}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </div>
   <!-- <ion-list>
     <ion-item class="text" *ngFor="let item of items | async">
       {{item.$value}}
@@ -13,7 +59,8 @@
   </ion-list> -->
   
   <hr>
-  <div *ngIf="user">
+  <div *ngIf="showAuth">
+    <h2>Welcome to Dialog</h2>
     <ion-item>
       <ion-label color="primary" floating>Email Input</ion-label>
       <ion-input #email type="email"></ion-input>
@@ -26,8 +73,9 @@
 
     <button (click) = 'signup(email.value,pwd.value)' ion-button round>Sign Up</button>
     <button (click) = 'login(email.value,pwd.value)' ion-button round>Log In</button>
-    <button (click) = 'logout()' ion-button round>Log Out</button>
   </div>
+
+
   
   <div> {{ (user | async)?.uid }} </div>
 </ion-content>
