@@ -8,7 +8,7 @@
 
 <ion-content>
   <ion-list>
-  <button ion-item *ngFor="let contact of contacts">
+  <button ion-item *ngFor="let contact of contacts" [navPush]="chatPage" (click)="getId(contact.id)">
     <ion-avatar item-start>
       <img src={{contact.img_src}}>
     </ion-avatar>
