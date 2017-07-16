@@ -7,12 +7,12 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
   user = {
-    name: 'Paula Bolliger',
-    profileImage: 'https://s-media-cache-ak0.pinimg.com/736x/33/7b/9b/337b9b91c388d3fc58fe0b95b6881b82--light-year-infinity.jpg',
-    coverImage: 'https://a.dilcdn.com/bl/wp-content/uploads/sites/25/2016/11/ToyStory174.jpg',
-    occupation: 'Villain',
-    location: 'Andys House',
-    description: 'A wise man once said: The more you do something, the better you will become at it.',
+    name: 'Michael Smith',
+    profileImage: 'https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/13775405_1401473769867978_5482203317042747458_n.jpg?oh=cf18bc0d2a32dc0636cfbab4687b66af&oe=59CAE525',
+    coverImage: 'https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/13769430_1401473179868037_646529923203410133_n.jpg?oh=84af21bf109ee04ff8cdcb5920aa47d4&oe=59C4EEA4',
+    occupation: 'Male',
+    location: 'Hillsboro, Or',
+    description: 'Success is no accident. It is hard work, perseverance, learning, studying, sacrifice and most of all, love of what you are doing or learning to do',
     followers: 456,
     following: 1052,
     posts: 35
@@ -20,10 +20,12 @@ export class HomePage {
 
   language: any;
   genre: any;
+  religion: any;
+  religions = ['Christianity', 'Islam', 'Other'];
   languages = ['Republican', 'Democratic', 'Other'];
   genres =['Rock', 'Rap', 'Country'];
   
-
+Christianity
   constructor(public navCtrl: NavController) {
 
   }

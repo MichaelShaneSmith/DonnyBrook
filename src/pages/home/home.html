@@ -1,6 +1,8 @@
 <ion-header>
   <ion-navbar>
-  
+  <ion-title>
+      Profile
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -25,16 +27,23 @@
     <ion-list-header>
       General
     </ion-list-header>
+
     <ion-item>
     <ion-icon name='settings' item-start></ion-icon>
     <ion-label>Politics</ion-label>
     <ion-select [(ngModel)]="language">
     <ion-option *ngFor="let language of languages" [value]="language">{{language}}</ion-option>
     </ion-select>
-
     </ion-item>
-    
-    </ion-list>
+
+    <ion-item>
+    <ion-icon name='settings' item-start></ion-icon>
+    <ion-label>Religion</ion-label>
+    <ion-select [(ngModel)]="religion">
+    <ion-option *ngFor="let religion of religions" [value]="religion">{{religion}}</ion-option>
+    </ion-select>
+    </ion-item>
+
 
     <ion-item>
     <ion-icon name='musical-notes' item-start style="color: #d03e84"></ion-icon>
@@ -43,5 +52,11 @@
     <ion-option *ngFor="let genre of genres" [value]="genre">{{genre}}</ion-option>
     </ion-select>
     </ion-item>
+
+
+
+    </ion-list>
+
+    
 
 </ion-content>
