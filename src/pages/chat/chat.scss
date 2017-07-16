@@ -1,0 +1,32 @@
+page-chat {
+   div {
+     display:inline;
+   }
+   span {
+     display:inline-block;
+     padding: 10px;
+     border-radius: 10px;
+     max-width:240px;
+     word-wrap: break-word;
+   }
+ 
+   .me {
+     text-align:right;
+     span{
+       background-color: #C7C7CC;
+       color: black;
+       max-width:240px;
+     word-wrap: break-word;
+     }
+   }
+ 
+   .other {
+     text-align:left;
+     span{
+       background-color: #007AFF;
+       color: white;
+       max-width:240px;
+     word-wrap: break-word;
+     }
+   }
+ }
