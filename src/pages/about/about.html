@@ -21,7 +21,7 @@
 				From: {{ c.location.city }}, {{ c.location.postcode }}<br>
 				Phone: {{ c.phone }}
 			</ion-card-content>
-			
+			<hr>
 			<ion-row *ngIf="c.name">
 				<ion-col>
 					<button ion-button clear small icon-left color="primary" (click)="voteUp(true)">
@@ -36,7 +36,9 @@
 					</button>
 				</ion-col>
 			</ion-row>
+			
 		</ion-card>
 	</div>
+	<hr>
 	<p style="text-align: center; width: 100%;">{{ recentCard }}</p>
 </ion-content>

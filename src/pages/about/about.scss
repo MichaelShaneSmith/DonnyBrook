@@ -1,9 +1,9 @@
 page-about {
 	#card-stack {
 		width: 90%;
-		height: 200px;
+		height: 350px;
 		background: #fff;
-		border: 5px solid #000;
+		border: 0px solid #000;
 		margin: 100px auto 0;
 		border-radius: 10px;
 		position: relative;
@@ -15,5 +15,8 @@ page-about {
 		text-align: center;
 		top: 3%;
 		height: 90%;
+	}
+	ion-card-content {
+		padding-top: 60px;
 	}
 }
