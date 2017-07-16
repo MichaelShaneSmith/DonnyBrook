@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-  <ion-title>
+    <ion-title>
       Profile
     </ion-title>
   </ion-navbar>
@@ -9,7 +9,7 @@
 <ion-content padding class="transparent-header">
 
 
-<div id="profile-bg" [ngStyle]="{'background-image': 'url(' + user.coverImage +')'}"></div>
+  <div id="profile-bg" [ngStyle]="{'background-image': 'url(' + user.coverImage +')'}"></div>
   <div id="content">
     <div id="profile-info" padding>
       <img id="profile-image" [src]="user.profileImage">
@@ -18,45 +18,45 @@
       <p class="profile-description">{{user.description}}</p>
       <button ion-button *ngIf="!following" small color="purple" (click)="follow()">Update Photo</button>
 
-        </div>
-        <hr/>
     </div>
+    <hr/>
+  </div>
 
 
-    <ion-list no-border>
+  <ion-list no-border>
     <ion-list-header>
       General
     </ion-list-header>
 
     <ion-item>
-    <ion-icon name='settings' item-start></ion-icon>
-    <ion-label>Politics</ion-label>
-    <ion-select [(ngModel)]="language">
-    <ion-option *ngFor="let language of languages" [value]="language">{{language}}</ion-option>
-    </ion-select>
+      <ion-icon name='settings' item-start></ion-icon>
+      <ion-label>Politics</ion-label>
+      <ion-select [(ngModel)]="language">
+        <ion-option *ngFor="let language of languages" [value]="language">{{language}}</ion-option>
+      </ion-select>
     </ion-item>
 
     <ion-item>
-    <ion-icon name='settings' item-start></ion-icon>
-    <ion-label>Religion</ion-label>
-    <ion-select [(ngModel)]="religion">
-    <ion-option *ngFor="let religion of religions" [value]="religion">{{religion}}</ion-option>
-    </ion-select>
+      <ion-icon name='settings' item-start></ion-icon>
+      <ion-label>Religion</ion-label>
+      <ion-select [(ngModel)]="religion">
+        <ion-option *ngFor="let religion of religions" [value]="religion">{{religion}}</ion-option>
+      </ion-select>
     </ion-item>
 
 
     <ion-item>
-    <ion-icon name='musical-notes' item-start style="color: #d03e84"></ion-icon>
-    <ion-label>Music</ion-label>
-    <ion-select [(ngModel)]="genre">
-    <ion-option *ngFor="let genre of genres" [value]="genre">{{genre}}</ion-option>
-    </ion-select>
+      <ion-icon name='musical-notes' item-start style="color: #d03e84"></ion-icon>
+      <ion-label>Music</ion-label>
+      <ion-select [(ngModel)]="genre">
+        <ion-option *ngFor="let genre of genres" [value]="genre">{{genre}}</ion-option>
+      </ion-select>
     </ion-item>
 
 
 
-    </ion-list>
+  </ion-list>
 
-    
+  
 
 </ion-content>
